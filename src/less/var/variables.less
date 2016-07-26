@@ -1,0 +1,64 @@
+// ==========================================================================
+// VARIABLES
+// ========================================================================== */
+
+@w-mobile-xxs: 320px;
+@w-mobile-xs: 375px;
+@w-mobile-sm: 414px;
+@w-mobile-md: 568px;
+@w-mobile-lg: 667px;
+@w-tablet-sm: 750px;
+@w-tablet-md: 990px;
+@w-desktop-sm: 1170px;
+@w-desktop-md: 1380px;
+@w-desktop-lg: 1680px;
+
+@max-width: 1170px;
+
+@mobile-xs: e('(min-width: @{w-mobile-xs})');
+@mobile-sm: e('(min-width: @{w-mobile-sm})');
+@mobile-md: e('(min-width: @{w-mobile-md})');
+@mobile-lg: e('(min-width: @{w-mobile-lg})');
+@mobile-landscape: e('@{landscape} and (max-width: @{w-mobile-lg})');
+@tablet-sm: e('(min-width: @{w-tablet-sm})');
+@tablet-md: e('(min-width: @{w-tablet-md})');
+@desktop-sm: e('(min-width: @{w-desktop-sm})');
+@desktop-md: e('(min-width: @{w-desktop-md})');
+@desktop-lg: e('(min-width: @{w-desktop-lg})');
+@portrait: e('(orientation: portrait)');
+@landscape: e('(orientation: landscape)');
+
+@font-default: 'Proxima Nova', Arial, sans-serif;
+@font-heading: 'Arno Pro', serif;
+
+@color-black: #000;
+@color-white: #fff;
+@color-light: #eee;
+
+@color-isabelline:#f3f2ef;
+@color-onyx: #393939;
+@color-cerulean: #009ee3;
+@color-midnight: #162a49;
+@color-charcoal: #2c3e5a;
+@color-blue: #34bffc;
+@color-blue-light: #b1dbed;
+@color-gray-light: #d4d4d4;
+@color-white-smoke: #f9f8f7;
+@color-glitter: #e8f0f7;
+
+@margin-sm: 16px;
+@margin-md: 30px;
+@margin-lg: 40px;
+
+@easing: cubic-bezier(.645, .045, .355, 1);
+@duration-s: .1s @easing;
+@duration: .2s @easing;
+@duration-l: .4s @easing;
+
+@images: '../img';
+@svg: '../svg';
+@fonts: '../fonts';
+
+@sprite-url: '@{images}/sprite.png';
+@sprite-x: 75px;
+@sprite-y: 50px;

@@ -1,0 +1,24 @@
+// ==========================================================================
+// MIXINS
+// ========================================================================== */
+// SPRITE
+.sprite {
+    background: url(@sprite-url) no-repeat 0 0;
+    background-size: @sprite-x @sprite-y;
+}
+// COLORS
+.color-white(@opacity) {
+    @color: rgba(255, 255, 255, @opacity);
+}
+.color-black(@opacity) {
+    @color: rgba(0, 0, 0, @opacity);
+}
+.color-onyx(@opacity) {
+    @color: rgba(57, 57, 57, @opacity);
+}
+.color-midnight(@opacity) {
+    @color: rgba(22, 42, 73, @opacity);
+}
+.color-blue-light(@opacity) {
+    @color: rgba(177, 219, 237, @opacity);
+}

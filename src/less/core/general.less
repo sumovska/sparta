@@ -1,0 +1,218 @@
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+    height: 100%;
+    font: 18px/32px @font-default;
+    color: @color-black;
+    overflow-x: hidden;
+    background: @color-white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.nav-visible {
+        overflow: hidden;
+    }
+}
+body {
+    min-height: 100%;
+    min-width: @w-mobile-xxs;
+    padding-top: 84px;
+    position: relative;
+    overflow-x: hidden;
+    background: @color-white;
+    @media @tablet-sm {
+        padding-top: 84px;
+        padding-left: 64px;
+
+        &:before {
+            .pseudo;
+            width: 64px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 30;
+            background: @color-midnight;
+            .color-midnight(.25);
+            box-shadow: 0 0 15px @color;
+        }
+    }
+
+    .nav-visible & {
+        overflow: hidden;
+    }
+}
+/* ==========================================================================
+   _TEXT STYLES
+   ========================================================================== */
+p, ul, ol, dl {
+    margin-top: @margin-sm;
+    margin-bottom: @margin-sm;
+    @media @tablet-sm {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+:focus {
+    outline: -webkit-focus-ring-color auto 0;
+}
+a {
+    color: @color-black;
+    outline: none;
+    text-decoration: none;
+    transition: color @duration;
+    &:hover {
+        outline: none;
+        text-decoration: underline;
+    }
+}
+figure {
+    margin: @margin-md 0;
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+audio, canvas, img, video {
+    vertical-align: middle;
+}
+/*** HEADINGS ***/
+h1, .h1 {
+    margin-top: @margin-lg;
+    margin-bottom: 6px;
+    font: 800 42px/54px @font-heading;
+    color: @color-midnight;
+    @media @tablet-sm {
+        margin-top: 46px;
+        font-size: 80px;
+        line-height: 80px;
+    }
+}
+h2, .h2 {
+    margin-top: 28px;
+    margin-bottom: 4px;
+    font: 800 34px/34px @font-heading;
+    color: @color-midnight;
+    @media @tablet-sm {
+        margin-top: 46px;
+        font-size: 46px;
+        line-height: 46px;
+    }
+    @media @desktop-sm {
+        font-size: 55px;
+        line-height: 55px;
+    }
+}
+h3, .h3 {
+    margin-top: @margin-lg;
+    margin-bottom: @margin-sm;
+    font: 300 24px/26px @font-default;
+    color: @color-black;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 38px;
+        line-height: 40px;
+    }
+}
+h4, .h4 {
+    margin-top: @margin-md;
+    margin-bottom: 0;
+    font: 300 18px/21px @font-default;
+    color: @color-black;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+h5, .h5 {
+    margin-top: @margin-md;
+    margin-bottom: 0;
+    font: 300 14px/21px @font-default;
+    color: @color-black;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+h6, .h6 {
+    margin-top: @margin-md;
+    margin-bottom: 0;
+    font: 300 12px/16px @font-default;
+    color: @color-black;
+    @media @tablet-sm {
+        margin-top: 46px;
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    & + p {
+        margin-top: 0;
+    }
+}
+/* ==========================================================================
+   GENERAL STYLES
+   ========================================================================== */
+.hidden {
+    display: none;
+}
+.pseudo {
+    display: block;
+    content: '\0020';
+    overflow: hidden;
+}
+.clearfix {
+    display: table;
+    content: '\0020';
+    clear: both;
+}
+.sprite-holder {
+    display: none;
+}
+.mobile-hidden-inline {
+    display: none;
+    @media @tablet-sm {
+        display: inline;
+    }
+}
+.text-large {
+    margin-bottom: @margin-md;
+    font: 20px/24px @font-heading;
+    letter-spacing: .02em;
+    @media @tablet-sm {
+        margin-bottom: 44px;
+        font-size: 24px;
+        line-height: 34px;
+    }
+    @media @desktop-sm {
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
+/* ==========================================================================
+   CONTAINERS
+   ========================================================================== */
+.wrapper {
+    max-width: 890px;
+    margin: 0 auto;
+    padding: 0 20px;
+    &:after {
+        .clearfix;
+    }
+
+    @media @tablet-sm {
+        padding: 0 35px;
+    }
+}
