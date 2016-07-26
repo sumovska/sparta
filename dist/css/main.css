@@ -1,0 +1,432 @@
+/*
+ * Project: Sparta Land Girlfight
+ * File: Main styles
+ */
+.sprite {
+  background: url('../img/sprite.png') no-repeat 0 0;
+  background-size: 75px 50px;
+}
+/* ==========================================================================
+   FONTS
+   ========================================================================== */
+@font-face {
+  font-family: 'Orpheus';
+  src: url('../fonts/webfont-orpheus.eot');
+  src: local('☺'), url('../fonts/webfont-orpheus.woff') format('woff'), url('../fonts/webfont-orpheus.ttf') format('truetype'), url('../fonts/webfont-orpheus.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ==========================================================================
+   BASE STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+html {
+  width: 100%;
+  height: 100%;
+  font: 18px/23px 'Orpheus', Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html.nav-visible {
+  overflow: hidden;
+}
+body {
+  min-width: 990px;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  background: #000;
+}
+/* ==========================================================================
+   _TEXT STYLES
+   ========================================================================== */
+p,
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+:focus {
+  outline: -webkit-focus-ring-color auto 0;
+}
+a {
+  color: #000;
+  outline: none;
+  text-decoration: none;
+  -webkit-transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+a:hover, a:focus {
+  outline: none;
+  text-decoration: underline;
+}
+/* ==========================================================================
+   GENERAL STYLES
+   ========================================================================== */
+.hidden {
+  display: none;
+}
+.pseudo {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+}
+.clearfix {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+/* ==========================================================================
+   CONTAINERS
+   ========================================================================== */
+.wrapper {
+  max-width: 890px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.wrapper:after {
+  display: table;
+  content: '\0020';
+  clear: both;
+}
+/* ==========================================================================
+   FORMS RESET
+   ========================================================================== */
+form,
+fieldset,
+legend {
+  padding: 0;
+  border: none;
+  margin: 0;
+  display: block;
+}
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+.page {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.page:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  z-index: 5;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 30%, #000000 100%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 30%, #000000 100%);
+}
+/* ==========================================================================
+   BACKGROUND
+   ========================================================================== */
+.bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 12%;
+  bottom: 80px;
+  left: 10%;
+  background: url('../img/bg.jpg') no-repeat center top;
+  background-size: cover;
+  z-index: 1;
+}
+.bg:before,
+.bg:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: inherit;
+  background-size: cover;
+}
+.bg:before {
+  width: 10vw;
+  left: -10vw;
+  background-position: 100% 0;
+}
+.bg:after {
+  width: 12vw;
+  right: -12vw;
+  background-position: 78% 0;
+}
+.img {
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+}
+/* ==========================================================================
+   CURTAIN
+   ========================================================================== */
+.curtain-left,
+.curtain-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.curtain-left:before,
+.curtain-right:before,
+.curtain-left:after,
+.curtain-right:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.curtain-left:before,
+.curtain-right:before {
+  z-index: 5;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+.curtain-left:after,
+.curtain-right:after {
+  z-index: 3;
+}
+.curtain-left {
+  right: 90%;
+  left: 0;
+}
+.curtain-left:before {
+  right: -30px;
+  background-image: url('../img/left.png');
+  background-position: right top;
+}
+.curtain-left:after {
+  right: -120px;
+  background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.9) 100%);
+}
+.curtain-right {
+  top: 0;
+  left: 88%;
+  right: 0;
+}
+.curtain-right:before {
+  left: -30px;
+  background-image: url('../img/right.png');
+  background-position: left top;
+}
+.curtain-right:after {
+  left: -120px;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.9) 100%);
+}
+/* ==========================================================================
+   STONES
+   ========================================================================== */
+.stones {
+  height: 30%;
+  min-height: 150px;
+  max-height: 300px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 15;
+}
+.stones:before,
+.stones:after {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  height: 100%;
+  max-height: 300px;
+  position: absolute;
+  bottom: 0;
+  background: url('../img/stones.png') no-repeat;
+  background-size: auto 100%;
+}
+.stones:before {
+  width: 540px;
+  left: 0;
+  background-position: left bottom;
+}
+.stones:after {
+  width: 785px;
+  right: 0;
+  background-position: right bottom;
+}
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.header .logo {
+  margin-left: -100px;
+  position: absolute;
+  top: 8px;
+  left: 28%;
+}
+.header .logo img {
+  width: 200px;
+  height: 120px;
+  display: block;
+}
+/* ==========================================================================
+   FRAME
+   ========================================================================== */
+.frame {
+  width: 746px;
+  height: 320px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 30;
+  text-align: center;
+  background: url('../img/frame.png') no-repeat;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.75);
+  cursor: default;
+}
+.frame > p:last-child {
+  margin-bottom: 0;
+}
+.frame .step {
+  height: 320px;
+  padding: 150px 90px 20px 90px;
+  position: relative;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.frame .step.visible {
+  display: block;
+}
+.frame .step.done {
+  opacity: 1;
+}
+.frame .step.step-2 {
+  padding-top: 155px;
+}
+.frame .step.step-3.done .progress:before {
+  width: 346px;
+}
+.frame .step.step-4 {
+  padding-top: 170px;
+}
+.frame .progress {
+  width: 359px;
+  height: 35px;
+  margin: 18px auto 24px;
+  position: relative;
+  background: url('../img/progress.png') no-repeat 0 0;
+}
+.frame .progress:before {
+  display: block;
+  content: '\0020';
+  overflow: hidden;
+  width: 0;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  bottom: 7px;
+  background: -webkit-linear-gradient(top, #e10019 0%, #600000 100%);
+  background: linear-gradient(to bottom, #e10019 0%, #600000 100%);
+  -webkit-transition: width 3s cubic-bezier(0.645, 0.045, 0.355, 1) 1s;
+  transition: width 3s cubic-bezier(0.645, 0.045, 0.355, 1) 1s;
+  opacity: .6;
+}
+.frame .alert {
+  margin: 0;
+  font-size: 14px;
+  line-height: 14px;
+  position: absolute;
+  top: 100px;
+  right: 90px;
+  left: 90px;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.frame .alert .red {
+  color: #f32020;
+}
+.frame .button {
+  min-width: 160px;
+  height: 73px;
+  padding: 12px 50px;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  background: url('../img/button.png') no-repeat center 0;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(55, 21, 3, 0.75), inset 0 -6px 0 0 rgba(69, 27, 5, 0.75);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.frame .button:active {
+  top: 2px;
+}
+.frame .button.button-red {
+  background-position: center bottom;
+}
+.frame .actions {
+  max-width: 500px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  cursor: default;
+}
+@media (min-width: 1680px) {
+  .curtain-left:before {
+    right: -50px;
+  }
+  .curtain-right:before {
+    left: -50px;
+  }
+}
+
+/*# sourceMappingURL=maps/main.css.map */

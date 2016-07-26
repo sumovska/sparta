@@ -1,0 +1,153 @@
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+.page {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    position: relative;
+    &:after {
+        .pseudo;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 80px;
+        z-index: 5;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 30%, rgba(0,0,0,1) 100%);
+    }
+}
+/* ==========================================================================
+   BACKGROUND
+   ========================================================================== */
+.bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 12%;
+    bottom: 80px;
+    left: 10%;
+    background: url('@{images}/bg.jpg') no-repeat center top;
+    background-size: cover;
+    z-index: 1;
+    &:before, &:after {
+        .pseudo;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: inherit;
+        background-size: cover;
+    }
+    &:before {
+        width: 10vw;
+        left: -10vw;
+        background-position: 100% 0;
+    }
+    &:after {
+        width: 12vw;
+        right: -12vw;
+        background-position: 78% 0;
+    }
+}
+.img {
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+}
+/* ==========================================================================
+   CURTAIN
+   ========================================================================== */
+.curtain {
+    &-left, &-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 10;
+        &:before, &:after {
+            .pseudo;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        &:before {
+            z-index: 5;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+        }
+        &:after {
+            z-index: 3;
+        }
+    }
+    &-left {
+        right: 90%;
+        left: 0;
+        &:before {
+            right: -30px;
+            background-image: url('@{images}/left.png');
+            background-position: right top;
+            @media @desktop-lg {
+                right: -50px;
+            }
+        }
+        &:after {
+            right: -120px;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .6) 50%, rgba(0, 0, 0, .9) 100%);
+        }
+    }
+    &-right {
+        top: 0;
+        left: 88%;
+        right: 0;
+        &:before {
+            left: -30px;
+            background-image: url('@{images}/right.png');
+            background-position: left top;
+            @media @desktop-lg {
+                left: -50px;
+            }
+        }
+        &:after {
+            left: -120px;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .6) 50%, rgba(0, 0, 0, .9) 100%);
+        }
+    }
+}
+/* ==========================================================================
+   STONES
+   ========================================================================== */
+.stones {
+    height: 30%;
+    min-height: 150px;
+    max-height: 300px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+
+    &:before, &:after {
+        .pseudo;
+        height: 100%;
+        max-height: 300px;
+        position: absolute;
+        bottom: 0;
+        background: url('@{images}/stones.png') no-repeat;
+        background-size: auto 100%;
+    }
+    &:before {
+        width: 540px;
+        left: 0;
+        background-position: left bottom;
+    }
+    &:after {
+        width: 785px;
+        right: 0;
+        background-position: right bottom;
+    }
+}

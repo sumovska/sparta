@@ -2,153 +2,24 @@
    HEADER
    ========================================================================== */
 .header {
-    min-width: 320px;
-    height: 84px;
-    padding-left: 64px;
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
-    z-index: 99;
-    background: @color-white;
-    .color-midnight(.25);
-    box-shadow: 0 0 15px @color;
+    z-index: 100;
+    cursor: default;
+    user-select: none;
 
     .logo {
-        height: 51px;
-        padding: 10px;
-        margin: auto;
+        margin-left: -100px;
         position: absolute;
-        top: 16px;
-        left: 75px;
-
-        a {
-            padding: 10px;
-            margin: -10px;
-            display: block;
-        }
+        top: 8px;
+        left: 28%;
 
         img {
-            width: 211px;
-            height: 31px;
+            width: 200px;
+            height: 120px;
             display: block;
-        }
-    }
-
-    .phone {
-        height: 36px;
-        margin: 0;
-        display: none;
-        position: absolute;
-        right: 22px;
-        top: 23px;
-        font-size: 16px;
-        line-height: 42px;
-        font-weight: bold;
-        @media @tablet-sm {
-            display: block;
-        }
-        @media @desktop-sm {
-            right: 31px;
-        }
-
-        a {
-            padding-right: 51px;
-            position: relative;
-            z-index: 5;
-            display: block;
-            color: @color-midnight;
-            &:hover {
-                text-decoration: none;
-            }
-        }
-
-        .icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            margin: auto;
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-            background: @color-midnight;
-            backface-visibility: hidden;
-
-            svg {
-                width: 16px;
-                height: 16px;
-                margin: auto;
-                display: block;
-                position: absolute;
-                top: 1px;
-                right: 2px;
-                bottom: 0;
-                left: 0;
-            }
-        }
-    }
-
-    .menu {
-        display: none;
-        cursor: default;
-        @media @desktop-sm {
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            display: block;
-            overflow: hidden;
-            position: absolute;
-            top: 0;
-            left: 325px;
-            font-size: 13px;
-            line-height: 24px;
-            font-weight: bold;
-            letter-spacing: .05em;
-            text-transform: uppercase;
-
-            li {
-                float: left;
-                position: relative;
-
-                &:before {
-                    .pseudo;
-                    display: none;
-                    height: 3px;
-                    overflow: hidden;
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;
-                    z-index: 1;
-                    background: @color-cerulean;
-                }
-
-                a {
-                    padding: 33px 21px 27px;
-                    display: block;
-                    position: relative;
-                    z-index: 5;
-                    transition: color @duration;
-                    &:hover {
-                        color: @color-cerulean;
-                        text-decoration: none;
-                    }
-                }
-
-                &.active {
-                    cursor: default;
-                    &:before {
-                        display: block;
-                    }
-                    a {
-                        color: @color-cerulean;
-                        cursor: default;
-                    }
-                }
-            }
         }
     }
 }

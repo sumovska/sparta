@@ -1,0 +1,124 @@
+/* ==========================================================================
+   FRAME
+   ========================================================================== */
+.frame {
+    width: 746px;
+    height: 320px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    text-align: center;
+    background: url('@{images}/frame.png') no-repeat;
+    .color-black(.75);
+    text-shadow: 4px 4px 3px @color;
+    cursor: default;
+    > p:last-child {
+        margin-bottom: 0;
+    }
+
+    .step {
+        height: 320px;
+        padding: 150px 90px 20px 90px;
+        position: relative;
+        display: none;
+        opacity: 0;
+        transition: opacity .6s @easing;
+        &.visible {
+            display: block;
+        }
+        &.done {
+            opacity: 1;
+        }
+
+        &.step-2 {
+            padding-top: 155px;
+        }
+        &.step-3.done {
+            .progress:before {
+                width: 346px;
+            }
+        }
+        &.step-4 {
+            padding-top: 170px;
+        }
+    }
+
+    .progress {
+        width: 359px;
+        height: 35px;
+        margin: 18px auto 24px;
+        position: relative;
+        background: url('@{images}/progress.png') no-repeat 0 0;
+
+        &:before {
+            .pseudo;
+            width: 0;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            bottom: 7px;
+            background: linear-gradient(to bottom, #e10019 0%, #600000 100%);
+            transition: width 3s @easing 1s;
+            opacity: .6;
+        }
+    }
+
+    .alert {
+        margin: 0;
+        font-size: 14px;
+        line-height: 14px;
+        position: absolute;
+        top: 100px;
+        right: 90px;
+        left: 90px;
+        z-index: 1;
+        user-select: none;
+
+        .red {
+            color: @color-red;
+        }
+    }
+
+    .button {
+        min-width: 160px;
+        height: 73px;
+        padding: 12px 50px;
+        border-radius: 5px;
+        display: inline-block;
+        position: relative;
+        font-size: 30px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: @color-white;
+        text-align: center;
+        text-decoration: none;
+        background: url('@{images}/button.png') no-repeat center 0;
+        .color-black(.5);
+        text-shadow: 4px 4px 3px @color;
+        box-shadow: 0 0 10px rgba(55, 21, 3, .75), inset 0 -6px 0 0 rgba(69, 27, 5, .75);
+        user-select: none;
+        &:active {
+            top: 2px;
+        }
+
+        &.button-red {
+            background-position: center bottom;
+        }
+    }
+
+    .actions {
+        max-width: 500px;
+        margin: auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -16px;
+        display: flex;
+        justify-content: space-around;
+        cursor: default;
+    }
+}

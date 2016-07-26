@@ -118,13 +118,8 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     flatten: true,
-                    src: [temp.css + 'normalize.css', temp.css + 'plugins.css'],
+                    src: [temp.css + 'normalize.css'],
                     dest: dist.css
-                }, {
-                    expand: true,
-                    flatten: true,
-                    src: temp.css + 'vendor/*.min.css',
-                    dest: dist.css + 'vendor'
                 }]
             },
             img_temp: {
@@ -442,19 +437,19 @@ module.exports = function(grunt) {
     grunt.registerTask("static:process", ["newer:copy:static"]);
 
     grunt.registerTask("css", ["css:start"]);
-    grunt.registerTask("css:start", ["clean:css", "copy:css_temp", "css:process", "cssmin:default", "concat:css", "copy:css_dist"]);
+    grunt.registerTask("css:start", ["clean:css", "copy:css_temp", "css:process", "cssmin:default", "copy:css_dist"]);
     grunt.registerTask("css:process", ["less:default", "postcss:default"]);
 
     grunt.registerTask("js", ["js:start"]);
-    grunt.registerTask("js:start", ["clean:js", "copy:js_temp", "uglify:default", "concat:js", "copy:js_dist"]);
+    grunt.registerTask("js:start", ["clean:js", "copy:js_temp", "uglify:default", "copy:js_dist"]);
     grunt.registerTask("js:process", ["newer:copy:js_temp", "newer:copy:js_dist"]);
 
     grunt.registerTask("img", ["img:start"]);
-    grunt.registerTask("img:start", ["clean:img", "copy:img_temp", "pngquant:default", "copy:img_dist"]);
-    grunt.registerTask("img:process", ["newer:copy:img_temp", "newer:pngquant:default", "newer:copy:img_dist"]);
+    grunt.registerTask("img:start", ["clean:img", "copy:img_temp", "copy:img_dist"]);
+    grunt.registerTask("img:process", ["newer:copy:img_temp", "newer:copy:img_dist"]);
 
     grunt.registerTask("svg", ["svg:start"]);
-    grunt.registerTask("svg:start", ["clean:svg", "copy:svg_temp", "svgo:default", "svgstore:default", "copy:svg_dist"]);
+    grunt.registerTask("svg:start", ["clean:svg", "copy:svg_temp", "svgo:default", "copy:svg_dist"]);
     grunt.registerTask("svg:process", ["newer:copy:svg_temp", "newer:svgo:default", "newer:copy:svg_dist"]);
 
     grunt.registerTask("favicon", ["favicon:start"]);
