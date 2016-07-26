@@ -1,0 +1,23 @@
+{
+  "name": "bower-list",
+  "authors": [
+    "Sergey Miron <sergey.miron@icloud.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "normalize.css#^4.2.0",
+    "html5shiv": "^3.7.3"
+  }
+}

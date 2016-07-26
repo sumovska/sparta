@@ -1,0 +1,7 @@
+.idea
+psd
+bower_components
+node_modules
+temp
+dist/css/maps
+*.map
