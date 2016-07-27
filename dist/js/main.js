@@ -6,7 +6,7 @@ var steps = document.querySelectorAll('.frame .step'),
 
 [].forEach.call(steps, function(step, i) {
 
-    function next() {
+    function next(event) {
         if (i < steps.length - 1) {
             steps[i].classList.remove('done');
             setTimeout(function() {
@@ -19,8 +19,8 @@ var steps = document.querySelectorAll('.frame .step'),
             if (i == 1) {
                 setTimeout(forward, progress);
             }
-            return false;
         }
+        event.preventDefault();
     }
 
     function forward() {
